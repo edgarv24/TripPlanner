@@ -1,0 +1,22 @@
+package com.tco.requests;
+
+import com.tco.misc.BadRequestException;
+
+public abstract class RequestHeader {
+
+  protected static final int CURRENT_SUPPORTED_VERSION = 4;
+
+  protected String requestType;
+  protected Integer requestVersion;
+
+  public String getRequestType() {
+    return requestType;
+  }
+
+  public Integer getRequestVersion() {
+    return requestVersion;
+  }
+
+  // Overrideable Methods
+  public abstract void buildResponse() throws BadRequestException;
+}
